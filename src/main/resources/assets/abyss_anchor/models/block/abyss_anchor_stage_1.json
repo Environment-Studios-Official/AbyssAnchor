@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "abyss_anchor:block/1",
+    "up": "abyss_anchor:block/5",
+    "north": "abyss_anchor:block/3",
+    "east": "abyss_anchor:block/3",
+    "south": "abyss_anchor:block/3",
+    "west": "abyss_anchor:block/3",
+    "particle": "abyss_anchor:block/1"
+  },
+  "render_type": "solid"
+}

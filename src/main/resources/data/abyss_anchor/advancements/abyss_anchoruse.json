@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "item": "abyss_anchor:abyss_anchor"
+    },
+    "title": {
+      "translate": "advancements.abyss_anchoruse.title"
+    },
+    "description": {
+      "translate": "advancements.abyss_anchoruse.descr"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "abyss_anchoruse": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {
+    "experience": 105
+  },
+  "parent": "minecraft:end/enter_end_gateway"
+}

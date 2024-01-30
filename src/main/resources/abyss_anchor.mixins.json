@@ -1,0 +1,16 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "org.uapvp.abyssanchor.mixins",
+  "compatibilityLevel": "JAVA_17",
+  "refmap": "abyss_anchor.refmap.json",
+  "mixins": [
+    "AAthrownEnderpearl",
+    "ChangeTitle"
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
