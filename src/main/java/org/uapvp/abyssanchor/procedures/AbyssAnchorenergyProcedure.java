@@ -24,6 +24,7 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.core.BlockPos;
 import net.minecraft.client.Minecraft;
 
+import org.uapvp.abyssanchor.AbyssAnchorMod;
 import org.uapvp.abyssanchor.network.AbyssAnchorModVariables;
 import org.uapvp.abyssanchor.init.AbyssAnchorModBlocks;
 
@@ -38,10 +39,6 @@ public class AbyssAnchorenergyProcedure {
 		if (event.getHand() != event.getEntity().getUsedItemHand())
 			return;
 		execute(event, event.getLevel(), event.getPos().getX(), event.getPos().getY(), event.getPos().getZ(), event.getEntity());
-	}
-
-	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
-		execute(null, world, x, y, z, entity);
 	}
 
 	private static void execute(@Nullable Event event, LevelAccessor world, double x, double y, double z, Entity entity) {
@@ -142,34 +139,37 @@ public class AbyssAnchorenergyProcedure {
 						_level.sendBlockUpdated(_bp, _bs, _bs, 3);
 				}
 				{
-					BlockPos _bp = BlockPos.containing(x, y, z);
-					BlockState _bs = AbyssAnchorModBlocks.ABYSS_ANCHOR_STAGE_1.get().defaultBlockState();
-					BlockEntity _be = world.getBlockEntity(_bp);
-					CompoundTag _bnbt = null;
-					if (_be != null) {
-						_bnbt = _be.saveWithFullMetadata();
-						_be.setRemoved();
-					}
-					world.setBlock(_bp, _bs, 3);
-					if (_bnbt != null) {
-						_be = world.getBlockEntity(_bp);
-						if (_be != null) {
-							try {
-								_be.load(_bnbt);
-							} catch (Exception ignored) {
+					AbyssAnchorMod.queueServerWork(1, () -> {
+						{
+							BlockPos _bp = BlockPos.containing(x, y, z);
+							BlockState _bs = AbyssAnchorModBlocks.ABYSS_ANCHOR_STAGE_1.get().defaultBlockState();
+							BlockEntity _be = world.getBlockEntity(_bp);
+							CompoundTag _bnbt = null;
+							if (_be != null) {
+								_bnbt = _be.saveWithFullMetadata();
+								_be.setRemoved();
 							}
+							world.setBlock(_bp, _bs, 3);
+							if (_bnbt != null) {
+								_be = world.getBlockEntity(_bp);
+								if (_be != null) {
+									try {
+										_be.load(_bnbt);
+									} catch (Exception ignored) {
+									}
+								}
+							}
+						}
+					});
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.respawn_anchor.charge")), SoundSource.BLOCKS, 1, 1);
+						} else {
+							_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.respawn_anchor.charge")), SoundSource.BLOCKS, 1, 1, false);
 						}
 					}
 				}
-				if (world instanceof Level _level) {
-					if (!_level.isClientSide()) {
-						_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.respawn_anchor.charge")), SoundSource.BLOCKS, 1, 1);
-					} else {
-						_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.respawn_anchor.charge")), SoundSource.BLOCKS, 1, 1, false);
-					}
-				}
-			}
+			} else ThrowingEnderperls = false;
 		}
-		else ThrowingEnderperls = false;
 	}
 }
