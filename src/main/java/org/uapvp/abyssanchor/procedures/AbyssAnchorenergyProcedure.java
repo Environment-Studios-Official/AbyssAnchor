@@ -31,6 +31,8 @@ import javax.annotation.Nullable;
 
 @Mod.EventBusSubscriber
 public class AbyssAnchorenergyProcedure {
+	public static boolean ThrowingEnderperls = false;
+
 	@SubscribeEvent
 	public static void onRightClickBlock(PlayerInteractEvent.RightClickBlock event) {
 		if (event.getHand() != event.getEntity().getUsedItemHand())
@@ -47,6 +49,8 @@ public class AbyssAnchorenergyProcedure {
 			return;
 		if ((world.getBlockState(BlockPos.containing(x, y, z))).getBlock() == AbyssAnchorModBlocks.ABYSS_ANCHOR.get() && !entity.isShiftKeyDown()
 				&& (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == Items.ENDER_PEARL) {
+			ThrowingEnderperls = true;
+
 			if (!(new Object() {
 				public boolean checkGamemode(Entity _ent) {
 					if (_ent instanceof ServerPlayer _serverPlayer) {
@@ -166,5 +170,6 @@ public class AbyssAnchorenergyProcedure {
 				}
 			}
 		}
+		else ThrowingEnderperls = false;
 	}
 }
