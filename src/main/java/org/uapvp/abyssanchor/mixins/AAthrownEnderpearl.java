@@ -46,8 +46,9 @@ public class AAthrownEnderpearl extends Item {
                 $$3.shrink(1);
             }
 
-            return InteractionResultHolder.sidedSuccess($$3, level.isClientSide());  
+            return InteractionResultHolder.sidedSuccess($$3, level.isClientSide());
         }
+        AbyssAnchorenergyProcedure.ThrowingEnderperls = false;
         return InteractionResultHolder.sidedSuccess($$3, level.isClientSide());
     }
 }

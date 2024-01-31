@@ -1,13 +1,11 @@
 {
-  "parent": "block/cube",
+  "parent": "abyss_anchor:custom/model",
   "textures": {
-    "down": "abyss_anchor:block/1",
-    "up": "abyss_anchor:block/5",
-    "north": "abyss_anchor:block/3",
-    "east": "abyss_anchor:block/3",
-    "south": "abyss_anchor:block/3",
-    "west": "abyss_anchor:block/3",
-    "particle": "abyss_anchor:block/1"
+    "all": "abyss_anchor:block/1",
+    "particle": "abyss_anchor:block/1",
+    "5": "abyss_anchor:block/5",
+    "6": "abyss_anchor:block/1",
+    "7": "abyss_anchor:block/3"
   },
   "render_type": "solid"
 }
