@@ -15,7 +15,7 @@ Localization: EN and RU
 If you have ideas or want to report a bug make a Discussion/Issue.
 
 
-Texture artist - Preferred to be anonymous
+Texture artist - Requested anonymity
 Coder - UAPvP
 Bug fixer, mod savior- SilverFish (MrIttriy)
 Bug fixer - MagicalAlexey
