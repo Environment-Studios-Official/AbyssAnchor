@@ -47,6 +47,7 @@ import java.util.AbstractMap;
 public class AbyssAnchorMod {
 	public static final Logger LOGGER = LogManager.getLogger(AbyssAnchorMod.class);
 	public static final String MODID = "abyss_anchor";
+	public static boolean ThrowingEnderperls = true;
 
 	public AbyssAnchorMod() {
 		MinecraftForge.EVENT_BUS.register(this);

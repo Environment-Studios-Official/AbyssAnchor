@@ -32,13 +32,13 @@ import javax.annotation.Nullable;
 
 @Mod.EventBusSubscriber
 public class AbyssAnchorenergyProcedure {
-	public static boolean ThrowingEnderperls = false;
 
 	@SubscribeEvent
 	public static void onRightClickBlock(PlayerInteractEvent.RightClickBlock event) {
 		if (event.getHand() != event.getEntity().getUsedItemHand())
 			return;
 		execute(event, event.getLevel(), event.getPos().getX(), event.getPos().getY(), event.getPos().getZ(), event.getEntity());
+		AbyssAnchorMod.ThrowingEnderperls = true;
 	}
 
 	private static void execute(@Nullable Event event, LevelAccessor world, double x, double y, double z, Entity entity) {
@@ -46,7 +46,7 @@ public class AbyssAnchorenergyProcedure {
 			return;
 		if ((world.getBlockState(BlockPos.containing(x, y, z))).getBlock() == AbyssAnchorModBlocks.ABYSS_ANCHOR.get() && !entity.isShiftKeyDown()
 				&& (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == Items.ENDER_PEARL) {
-			ThrowingEnderperls = true;
+
 
 			if (!(new Object() {
 				public boolean checkGamemode(Entity _ent) {
@@ -169,7 +169,7 @@ public class AbyssAnchorenergyProcedure {
 						}
 					}
 				}
-			} else ThrowingEnderperls = false;
+			} else AbyssAnchorMod.ThrowingEnderperls = false;
 		}
 	}
 }
