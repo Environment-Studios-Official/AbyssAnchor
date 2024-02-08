@@ -1,4 +1,4 @@
-------------EN------------
+## ------------EN------------
 
 This mod adds a new Abyss Anchor block which allows you to be safe from void.
 
@@ -20,7 +20,7 @@ Coder - UAPvP
 Bug fixer, mod savior- SilverFish (MrIttriy)
 Bug fixer - MagicalAlexey
 
-------------RU------------
+## ------------RU------------
 
 Этот мод добавляет новый блок - Якорь Бездны, который спасает тебя от падения в бездну.
 
