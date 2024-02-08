@@ -40,3 +40,8 @@ Bug fixer - MagicalAlexey
 Кодер - UAPvP
 Фикс багов, спаситель мода - SilverFish (MrIttriy)
 Фикс багов - MagicalAlexey
+
+
+
+![AbyssAnchor](https://cdn.discordapp.com/attachments/1201924857890353214/1205257883005222962/image.png?ex=65d7b6df&is=65c541df&hm=cd341cbaea938ea821b8ac928e629eb5daffc1d293821b41eb45bd0f813d13cd&)
+
