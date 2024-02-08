@@ -42,6 +42,5 @@ Bug fixer - MagicalAlexey
 Фикс багов - MagicalAlexey
 
 
-
-![alt text](https://github.com/Environment-Studios-Official/AbyssAnchor/blob/DevSilver/image.png)
+[alt text](https://github.com/Environment-Studios-Official/AbyssAnchor/blob/DevSilver/image.png)
 
