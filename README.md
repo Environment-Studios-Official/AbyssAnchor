@@ -27,4 +27,4 @@ Bug fixer - MagicalAlexey
 Кодер - UAPvP
 Фикс багов, спаситель мода - SilverFish (MrIttriy)
 Фикс багов - MagicalAlexey
-<img src="https://github.com/Environment-Studios-Official/AbyssAnchor/blob/DevSilver/image.png?raw=true" width="1920" height="1080"/>
+<img src="https://github.com/Environment-Studios-Official/AbyssAnchor/blob/DevSilver/image.png?raw=true" width="1280" height="720"/>
